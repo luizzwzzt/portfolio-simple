@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #161513;
+  color: #c5c5c5;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Coloca as partículas no fundo */
+}
+
+/* Ajuste do header para não sobrepor o conteúdo */
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda a altura da tela */
+  overflow: hidden;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Padding ajustado para melhor encaixe */
+  position: relative;
+  z-index: 1;
+}
+
+/* Ajuste da seção "about" */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte ao redor da seção */
+  border-radius: 10px; /* Bordas arredondadas */
+  background-color: #181616c0;
+  max-width: 100%; /* Garante que a caixa não ultrapasse os limites da .container */
+  width: 100%;
+  min-height: 60vh; /* Ajusta a altura mínima da seção */
+  z-index: 2;
+}
+
+/* Ajuste do conteúdo da seção "about" */
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  z-index: 2;
+  width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+  max-width: 800px; /* Largura máxima para manter o texto bem formatado */
+}
+
+/* Ajuste da imagem */
+.avatar img {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.about-text {
+  width: 100%;
+  text-align: center;
+  line-height: 1.8; /* Melhor espaçamento entre as linhas */
+  word-wrap: break-word; /* Quebra a linha automaticamente quando necessário */
+  hyphens: auto; /* Adiciona hifenização para melhorar a quebra de palavras */
+  max-width: 700px; /* Define uma largura máxima para o texto */
+  margin: 0 auto; /* Centraliza o texto */
+}
+
+.about-text h1 {
+  font-size: 32px;
+  color: #fff;
+}
+
+.about-text p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.about-text h1 > span {
+  background: var(
+    --Primary-Gradient,
+    linear-gradient(116deg, #427af1 71.79%, #7a14e0 95.51%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  margin-bottom: 40px; /* Adiciona um espaço abaixo do título */
+  font-size: 30px; /* Tamanho de fonte ajustado para melhor visualização */
+  text-align: center;
+  color: #fff;
+}
+
+.experience-with-lang {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite quebrar a linha para dispositivos menores */
+  gap: 20px; /* Espaçamento entre os cards */
+}
+
+.language-card {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  width: 220px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.language-card:hover {
+  transform: translateY(-10px); /* Levanta o card ao passar o mouse */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Aumenta a sombra */
+}
+
+.language-icon {
+  width: 60px; /* Tamanho do ícone */
+  margin-bottom: 15px;
+}
+
+.language-info h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.language-info p {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.heading-project {
+  background: var(
+    --Orange-Gradient,
+    linear-gradient(180deg, #f1c709 0%, #94e414 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+.project-item {
+  background: #2a2a2a;
+  margin: 20px;
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-item .project-image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Adiciona a transição suave ao clicar */
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* Animação de escala */
+}
+
+.project-item:hover .project-image-container {
+  transform: scale(1.05); /* Aumenta a escala da imagem ao passar o mouse */
+}
+
+.project-item:active .project-image-container {
+  transform: scale(1.2); /* Aumenta ainda mais a imagem quando clicada */
+}
+
+.project-title {
+  padding: 15px;
+}
+
+.project-title p {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Estilo de experiência */
+.heading-experience {
+  background: var(
+    --Blue-Gradient,
+    linear-gradient(180deg, #5badff 0%, #1373d1 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.experience-item {
+  padding: 30px 0;
+}
+
+.experience-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.experience-title-container .date {
+  margin-left: auto;
+}
+
+.experience-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #191919;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+footer p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.email-container img {
+  margin-right: 10px;
+}
+
+.email-container a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.email-container a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.social-links a {
+  margin-right: 20px;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-links a:hover img {
+  filter: brightness(1.2);
+}
